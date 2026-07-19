@@ -1,0 +1,38 @@
+﻿/**
+ * File name:	    home.css
+ * Purpose: 		Defines the visual appearance and layout for the Helpdesk Home web page.
+ * Author:			Milana Meftakhutdinova
+ * Date: 			November 5, 2025
+ */
+
+.navbar {
+    background-color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: 20px;
+    width: 100%;
+    height: 55px;
+}
+
+body {
+    background-color: #DEF9FF;
+    font-family: Monospace, Monaco;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.main {
+    text-align: center;
+}
+
+footer {
+    background-color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: 20px;
+    width: 100%;
+}
+
+#homelogo {
+    width: 40%
+}

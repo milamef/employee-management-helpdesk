@@ -1,0 +1,118 @@
+﻿/**
+ * File name:	    employee.css
+ * Purpose: 		Defines the visual appearance and layout for the Helpdesk Employee web page.
+ * Author:			Milana Meftakhutdinova
+ * Date: 			November 5, 2025
+ */
+
+.navbar {
+    background-color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: 20px;
+    width: 100%;
+    height: 55px;
+}
+
+body {
+    background-color: #DEF9FF;
+    font-family: Monospace, Monaco;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.main {
+    text-align: center;
+}
+
+footer {
+    background-color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: 20px;
+    width: 100%;
+}
+
+/*Logos*/
+#employeelogo {
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+}
+
+#modallogo {
+    width: 80%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Buttons*/
+input[type="button"] {
+    background-color: #126399;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 6px 16px;
+    margin-top: 10px;
+}
+
+/*Employee list*/
+#status {
+    background-color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: x-large;
+    color: white;
+} 
+
+button.list-group-item {
+    color: #5DB7F5;
+    font-family: Monospace, Monaco;
+    font-size: larger;
+} 
+
+/*Modal*/
+#modaltitle {
+    text-align: center;
+    width: 100%;
+}
+.card-header {
+    background-color: #B0DEFF;
+}
+.card-body {
+    background-color: #5DB7F5;
+}
+.card-footer {
+    background-color: #B0DEFF;
+}
+
+/*Validation*/
+div.error {
+    color: red;
+    background-color: #FFD9D9;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    left: 200px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+#modalstatus {
+    font-size: 19px;
+}
+
+/*Mobile version*/
+@media only screen and (max-width: 768px) {
+    #employeeList .col-4:last-child {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; /* add ... when text is too long */
+        display: block;
+        max-width: 100px;
+    }
+}

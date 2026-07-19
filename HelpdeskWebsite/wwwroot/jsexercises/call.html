@@ -1,0 +1,141 @@
+﻿<!--
+    File name:	    call.html
+    Purpose: 		Provides a web interface for managing Helpdesk calls, including viewing, adding, updating,
+                            and deleting call information.
+    Author:			Milana Meftakhutdinova
+    Date: 			November 26, 2025
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Call</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/call.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!--menu-->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand mx-3" href="#">Case Study</a>
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/jsexercises/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jsexercises/employee.html">Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/jsexercises/call.html">Call</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jsexercises/reports.html">Report</a>
+                </li>
+            </ul>
+            <form>
+                <input class="form-control" type="search" placeholder="Search" id="srch" aria-label="Search"
+                       style="width:10vw;margin-right:5vw;">
+            </form>
+        </div>
+    </nav>
+
+    <div class="main">
+        <img src="/img/Logo.png" alt="logo" id="employeelogo">
+        <h1>Calls</h1>
+        <h5>Helpdesk v2.0</h5>
+    </div>
+
+    <div class="justify-content-center align-items-center row mb-5 w-100">
+        <div class="list-group col-10" id="callList">
+        </div>
+    </div>
+
+    <!-- Modal markup --> 
+    <form id="CallModalForm" name="CallModalForm" method="post" action="">
+        <div class="modal fade" id="theModal" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="theModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/img/Logo.png" alt="logo" id="modallogo">
+                        <!-- Сall lookup -->
+                        <div class="mx-2 my-2">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h2 class="modal-title" id="modaltitle"></h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-5">Problem:</div>
+                                        <div class="col-7"><select id="ddlProblems" name="ddlProblems" class="form-control"></select></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Employee:</div>
+                                        <div class="col-7"><select id="ddlEmployees" name="ddlEmployees" class="form-control"></select></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Technician:</div>
+                                        <div class="col-7"><select id="ddlTechnicians" name="ddlTechnicians" class="form-control"></select></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 text-right">Date Opened:</div>
+                                        <div class="col-7 text-left" id="dateOpened"></div>
+                                    </div>
+                                    <div class="row" id="rowDateClosed">
+                                        <div class="col-5 text-right">Date Closed:</div>
+                                        <div class="col-7 text-left" id="dateClosed"></div>
+                                    </div>
+                                    <div class="row" id="rowCheckBoxClose">
+                                        <div class="col-5">Close Call:</div>
+                                        <div class="col-7">
+                                            <input type="checkbox" id="checkBoxClose">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Notes:</div>
+                                        <div class="col-7">
+                                            <textarea placeholder="enter notes" id="notes" name="notes" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <div class="row" style="padding-left:2vw;">
+                                        <input type="button" value="update" id="actionbutton" class="col-3 m-2 btn btn-secondary col-5"
+                                               style="left:20%" />
+                                        <input type="button" value="delete" id="deletebutton" class="col-3 m-2 btn btn-secondary col-5" />
+                                        <div class="alert alert-danger fade show" role="alert" id="dialog" style="right:4%">
+                                            <strong>Delete Employee?</strong><p></p>
+                                            <input type="button" class="mt-3" value="yes" id="yesbutton" />
+                                            <input type="button" class="mt-3" value="no" id="nobutton" />
+                                        </div>
+                                    </div>
+                                    <div id="modalstatus" class="text-left mt-3 mb-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--footer-->
+    <footer>
+        <a>© 2025 - Info3070</a>
+    </footer>
+
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/lib/js/jquery.validate.min.js"></script>
+    <script src="/js/call.js"></script>
+</body>
+</html>

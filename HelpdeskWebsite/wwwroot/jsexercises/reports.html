@@ -1,0 +1,64 @@
+﻿<!--
+    File name:	    reports.html
+    Purpose: 		Provides a web interface for creating Helpdesk reports of employees and calls
+    Author:			Milana Meftakhutdinova
+    Date: 			December 6, 2025
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/reports.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <!--navigation bar-->
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand mx-3" href="#">Case Study</a>
+            <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jsexercises/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jsexercises/employee.html">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jsexercises/call.html">Call</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/jsexercises/reports.html">Report</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main">
+        <img src="/img/Logo.png" alt="logo" id="reportslogo">
+        <h1>Reports</h1>
+        <h5>Helpdesk v2.0</h5>
+
+        <input type="button" value="Employees Report" id="employeereport" class="btn btn-secondary m-2" style="width: 200px;" />
+        <input type="button" value="Calls Report" id="callreport" class="btn btn-secondary m-2" style="width: 200px;" />
+
+        <div id="lblstatus"></div>
+    </div>
+
+    <footer>
+        <a>© 2025 - Info3070</a>
+    </footer>
+
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/js/reports.js"></script>
+</body>
+</html>
